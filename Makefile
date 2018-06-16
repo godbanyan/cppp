@@ -1,11 +1,12 @@
 VPATH=src
-SOURCE=computeBracketExpr.cc main.cc
 CC_FLAG = -Iinclude -g -std=c++11
 CC = g++
 
-build:$(SOURCE)
-	$(CC) $(CC_FLAG) $^
+build:$(target)
+
+%: %.cc
+	$(CC) $(CC_FLAG) $< -o $@.exe
 
 .PHONY: clean
 clean:
-	rd *.exe
+	rm *.exe
