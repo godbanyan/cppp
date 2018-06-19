@@ -1,5 +1,5 @@
 VPATH=src
-CC_FLAG = -Iinclude -g -std=c++11
+CC_FLAG = -I.. -g -std=c++11
 CC = g++
 
 build:$(target)

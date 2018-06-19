@@ -8,6 +8,9 @@ c++中的const与c语言中的不完全相同
      */
     const int a = 10;
 
+    /* 而且全局域只能赋予字面值, 以下语句会报错 */
+    const int c = get_size();
+
     int main(void)
     {
         /* 还是在local scope */
@@ -30,7 +33,7 @@ constexpr int b = 10;
 /*
 ** 若size返回的是普通类型的变量，则c也仅是一个变量，
 ** 不过是所指向的数据对象无法修改而已
-** 若size返回的是constexpr类型，则c依然是真正测常量
+** 若size返回的是constexpr类型，则c依然是真正的常量
 */
 const int c = size();
 constexpr int d = size_const();
@@ -43,7 +46,8 @@ int main(void)
 
     /*
      * 错误，对于变长数组的初始化可能会导致编译错误
-     * 至少是无法按预期进行整个数组的初始化
+     * 至少是无法按预期进行整个数组的初始化, 一维有可能初始化成功
+     * 但是2维的仅会初始化第一个数组元素的第一个元素
      */
     int ary_c[c] = {0};
 
