@@ -11,16 +11,21 @@ int main()
 {
     Sales_data books;
     Sales_data book;
-    if (std::cin >> book.bookNo >> book.units_sold >> book.revenue) {
-        while (std::cin >> book.bookNo) {
-            if (books.bookNo == book.bookNo)
-                ++books.units_sold;
+    int price;
+    if (std::cin >> books.bookNo >> books.units_sold >> price) {
+        books.revenue = books.units_sold * price;
+        while (std::cin >> book.bookNo >> book.units_sold >> price) {
+            book.revenue = book.units_sold * price;
+            if (books.bookNo == book.bookNo) {
+                books.units_sold += book.units_sold;
+                books.revenue += book.revenue;
+            }
             else {
-                std::cout << books.revenue * books.units_sold << std::endl;
+                std::cout << books.bookNo << " " << books.units_sold << " " << books.revenue << std::endl;
                 books = book;
             }
         }
-        std::cout << books.revenue * books.units_sold << std::endl;
+        std::cout << books.bookNo << " " << books.units_sold << " " << books.revenue << std::endl;
     }
     
     return 0;
