@@ -1,5 +1,5 @@
 /*
- * Exercise 7.56: Write your own version of the Account class.
+ * Exercise 7.57: Write your own version of the Account class.
 */
 
 #include <string>
