@@ -9,4 +9,4 @@ build:$(target)
 
 .PHONY: clean
 clean:
-	rm *.exe
+	rm -f *.exe *.log
