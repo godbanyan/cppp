@@ -1,3 +1,11 @@
+/* 
+ * Exercise 9.52: Use a stack to process parenthesized expressions. When you see an
+ * open parenthesis, note that it was seen. When you see a close parenthesis after an open
+ * parenthesis, pop elements down to and including the open parenthesis off the stack.
+ * push a value onto the stack to indicate that a parenthesized expression was replaced.
+*/
+
+
 #include <iostream>
 #include <vector>
 #include <stack>
@@ -18,10 +26,9 @@ int compute(int lVal, int rVal, const string &str)
         return rVal / lVal;
 
     return 0;
-    
 }
 
-int test(void)
+int main(void)
 {
     vector<string> expr{"(", "(", "1", "+", "2", ")" , "*", "3", ")"};
     stack<string> stk;
@@ -49,6 +56,8 @@ int test(void)
         else
             stk.push(*iter);
     }
+
+    cout << stod(stk.top()) << endl;
     
     return 0;
 }
