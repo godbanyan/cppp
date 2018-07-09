@@ -24,8 +24,6 @@ void replace(string &s, string ov, string nv)
             ++i;
         }
     }
-
-
 }
 
 int main(void)
