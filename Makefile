@@ -10,6 +10,9 @@ build:$(TARGET)
 %.exe: %.cc
 	$(CC) $(CC_FLAG) $< -o $@
 
+%: %.cc
+	$(CC) $(CC_FLAG) $< -o $@.exe
+
 .PHONY: clean
 clean:
 	rm -f *.exe *.log
