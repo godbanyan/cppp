@@ -40,7 +40,7 @@ constexpr int d = size_const();
 
 int main(void)
 {
-    /* 正确，a和b是都是常量，所以定义的数组不是变长数组
+    /* 正确，a和b是都是常量，所以定义的数组不是变长数组 */
     int ary_a[a] = {0};
     int ary_b[b] = {0};
 
