@@ -5,19 +5,23 @@
 #include <string>
 using namespace std;
 
-class Account {
-public:
+class Account
+{
+  public:
     static double rate() { return interestRate; }
     static void rate(double);
     void calculate() { amount += amount * interestRate; }
-private:
+
+  private:
     static double interestRate;
     double amount;
-    static constexpr int period = 30;
+    const int haha = 10;
+    static const int period = 30;      // 对于int型， static const int足以
+    static constexpr double db = 20.0; // 但是对于double型， 则需要static constexpr double
     double daily_tbl[period];
 };
 
-constexpr int Account::period;
+const int Account::period;
 
 int main(void)
 {
