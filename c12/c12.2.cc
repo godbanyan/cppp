@@ -9,12 +9,12 @@
 
 using namespace std;
 
-class strBlob
+class StrBlob
 {
   public:
     typedef vector<string>::size_type size_type;
-    strBlob();
-    strBlob(initializer_list<string> il) : data(make_shared<vector<string>>(il)) {}
+    StrBlob();
+    StrBlob(initializer_list<string> il) : data(make_shared<vector<string>>(il)) {}
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
     void push_back(const string &t) { data->push_back(t); }
@@ -28,25 +28,25 @@ class strBlob
     void check(size_type i, const std::string &msg) const;
 };
 
-void strBlob::check(size_type i, const string &msg) const
+void StrBlob::check(size_type i, const string &msg) const
 {
     if (i > data->size())
         throw out_of_range(msg);
 }
 
-string &strBlob::front() const
+string &StrBlob::front() const
 {
     check(0, "front on empty blob.");
     return data->front();
 }
 
-string &strBlob::back() const
+string &StrBlob::back() const
 {
     check(0, "back on empty blob.");
     return data->back();
 }
 
-void strBlob::pop_back(void)
+void StrBlob::pop_back(void)
 {
     check(0, "pop_back on empty blob.");
     data->pop_back();
